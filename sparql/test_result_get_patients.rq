@@ -1,0 +1,20 @@
+BASE  <https://knacc.umbc.edu/leroy/ontologies/synthea-covid-19#>
+PREFIX syn: <https://knacc.umbc.edu/leroy/ontologies/synthea-covid-19#>
+PREFIX encounter: <https://knacc.umbc.edu/leroy/ontologies/synthea-covid-19#Encounter>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?firstname ?lastname ?ssn ?passport ?address ?city ?county ?state ?healthcare_expenses
+WHERE {
+    ?s a syn:Patient  .
+    ?s syn:address ?address;
+    syn:city ?city;
+    syn:county ?county;
+    syn:state ?state;
+    syn:healthcare_expenses ?healthcare_expenses;
+    syn:firstname ?firstname;
+    syn:lastname ?lastname;
+    syn:ssn ?ssn;
+    syn:passport ?passport .
+}
